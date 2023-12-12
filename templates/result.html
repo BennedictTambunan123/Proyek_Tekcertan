@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+        .back-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Hasil Prediksi Serangan Jantung</h1>
+        <div id="predictionResult" class="alert result-message {% if prediction == 1 %}alert-danger{% else %}alert-success{% endif %}" role="alert">
+            <h2 class="font-weight-bold">
+                {% if prediction == 1 %}
+                    Ada risiko serangan jantung
+                {% else %}
+                    Risiko serangan jantung rendah
+                {% endif %}
+            </h2>
+        </div>
+
+        <!-- Back button -->
+        <a href="#" class="btn btn-primary back-button" onclick="goBack()">Kembali</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
